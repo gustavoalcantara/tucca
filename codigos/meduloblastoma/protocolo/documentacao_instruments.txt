@@ -1,0 +1,11 @@
+# Documentação - Instruments 
+Essa documentação visa elucidar o processo de subida
+dos `instruments` do RedCap caso necessite de alteração.
+Assim, a necessidade de alterar um instrumento (várias e várias vezes), se reflete na necessidade de padronizar o instrumento para o RedCap. Diante disso, o que eu faço:
+1 - Download do instrumento via RedCap na seção `Dictionary`  e no botão `Download The Current Data Dictionary`. 
+2 - Faço todas as alterações necessárias dentro do .csv. Nesse contexto, faço todas as alterações no próprio .csv utilizando o `libreoffice`.
+3 - Posterior a isso, levo para um .txt e atribuo no python o código pd.read_csv('instrument.txt', sep ='\t'). Diante disso, é pra ele retornar um total de 18 colunas que terá como disposiçao cada variável e suas caracteristicas.
+4 - Salvo como um .csv no padrão 
+x.to_csv('instrument.csv', sep = ',', index=False, header=True) para que ele suba como um instrumento separado por vírgula. 
+5 - Se tudo ocorrer bem, no upload é provável que você tenha warnings de quantidade de caracteres no nome das variáveis. Fique tranquilo. Warnings não são bugs. 
+6 - Se tudo ocorrer bem, commite na própria Master as alterações e torça pra não quebrar o upload.    
